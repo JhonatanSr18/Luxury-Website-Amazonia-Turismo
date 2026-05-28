@@ -1,0 +1,156 @@
+﻿:root {
+  --cor-header: #ebeaea;
+  --cor-detalhes: #5e7e68;
+  --cor-detalhes-hover: #405e49;
+  --cor-background: #e4e2dd;
+  --cor-dourada: #c8a35c;
+
+  --fonte-titulo: "Hahmlet", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--cor-background);
+}
+
+.menu-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 4rem;
+
+  background-color: var(--cor-header);
+  font-family: var(--fonte-titulo);
+
+  z-index: 1000;
+}
+
+.menu-box a {
+  text-decoration: none;
+}
+
+.header-logo {
+  font-size: 19px;
+  color: var(--cor-detalhes);
+
+  margin-left: 1rem;
+}
+
+.menu-btns {
+  color: var(--cor-dourada);
+  font-size: 14px;
+}
+
+.menu-btns:hover {
+  color: var(--cor-detalhes-hover);
+  transition: color 0.3s ease;
+}
+
+.header-alt {
+  color: #e0e0e0;
+  font-family: var(--fonte-titulo);
+
+  background-color: var(--cor-detalhes);
+
+  padding-left: 1rem;
+  padding-top: 0.2rem;
+  padding-right: 1rem;
+  padding-bottom: 0.2rem;
+
+  border-radius: 2rem;
+
+  margin-right: 1rem;
+}
+
+.header-alt:hover {
+  background-color: var(--cor-detalhes-hover);
+  color: #fff;
+
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
+}
+
+/* background + info - homeview */
+
+.video-section {
+  position: relative; /* cria contexto para camadas */
+  height: 90vh; /* limite de altura da seção */
+  overflow: hidden; /* corta excesso do vídeo */
+}
+
+.bg-video {
+  position: absolute; /* vídeo fica posicionado dentro da seção */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ajusta vídeo ao espaço */
+  z-index: 1; /* camada inferior */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* preto semitransparente */
+  z-index: 2; /* acima do vídeo, abaixo do texto */
+}
+
+.video-content {
+  position: relative; /* texto fica acima */
+  z-index: 2; /* camada superior */
+
+  color: var(--cor-header); /* contraste com o vídeo */
+  font-family: var(--fonte-titulo);
+
+  text-align: center;
+  padding-top: 150px; /* ajusta posição vertical */
+}
+
+.video-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.video-content p {
+  font-size: 1.2rem;
+  margin-bottom: 15vh;
+}
+
+.scroll-down {
+  position: relative;
+  z-index: 2;
+
+  font-size: 14px;
+  color: var(--cor-header);
+  font-family: var(--fonte-titulo);
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: var(--cor-dourada);
+  padding-left: 2rem;
+  padding-top: 0.5rem;
+  padding-right: 2rem;
+  padding-bottom: 0.5rem;
+  border-radius: 2rem;
+
+  text-align: center;
+}
+
+.scroll-down:hover {
+  background-color: #9b732a;
+  color: #fff;
+
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
+}
