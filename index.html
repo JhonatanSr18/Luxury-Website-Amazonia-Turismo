@@ -18,35 +18,48 @@
 </head>
 
 <body>
-    <header class="menu-box">
+    <header class="main-header" id="navbar">
+        <div class="top-shadow"></div>
+        <div class="logo-atlas">ATLAS TRAVEL</div>
 
-        <a href="" class="header-logo">
-            ATLAS TRAVEL
-        </a>
+        <nav class="nav-links">
+            <a href="#">Início</a>
+            <a href="#">Sobre Nós</a>
+            <a href="#">Catálogo</a>
+            <a href="#">Contatos</a>
+        </nav>
 
-        <a href="" class="menu-btns">Início</a>
-        <a href="" class="menu-btns">Sobre Nós</a>
-        <a href="" class="menu-btns">Catálogo</a>
-        <a href="" class="menu-btns">Contatos</a>
+        <button class="btn-orcamento">Solicite um Orçamento</button>
 
-        <a href="" class="header-alt">
-            Solicite um Orçamento
-        </a>
-
+        <div class="menu-hamburger" id="menuToggle">
+            <span></span>
+            <span></span>
+        </div>
     </header>
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="overlay-links">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre Nós</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#contatos">Contatos</a>
+
+            <a href="#orcamento" class="btn-orcamento-mobile">Solicite um Orçamento</a>
+        </div>
+    </div>
     <section class="video-section">
         <video autoplay muted loop class="bg-video">
             <source src="../videos/video-site.mp4" type="video/mp4">
         </video>
         <div class="overlay"></div>
         <div class="video-content">
-            <h2>Onde a natureza encontra o extraordinário</h2>
+            <h2>Experiências Exclusivas no
+                Coração da Floresta</h2>
             <p>Sua jornada começa aqui...</p>
 
-            <a href="" class="scroll-down">Explorar Roteiros</a>
+            <a href="" class="explore-btn">Explorar Roteiros</a>
         </div>
-
     </section>
+    <div class="transition-fade"></div>
     <section class="about-us-section">
         <div class="about-us-content">
             <div class="about-us-img">
@@ -72,6 +85,33 @@
             </div>
         </div>
     </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const navbar = document.getElementById('navbar');
+            const menuToggle = document.getElementById('menuToggle');
+
+            // 1. Escuta o scroll da página para ocultar o menu e exibir o hambúrguer
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+
+                    if (menuToggle) menuToggle.classList.remove('open');   // Reseta o botão de traços
+                    if (menuOverlay) menuOverlay.classList.remove('active'); // Faz o menu subir e sumir sozinho!
+                }
+            });
+
+            // 2. Escuta o clique no hambúrguer para fazer a animação do X
+            if (menuToggle) {
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('open');
+
+                    document.getElementById("menuOverlay").classList.toggle("active");
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
