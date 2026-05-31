@@ -25,7 +25,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, #000000 10%, transparent 100%);
+  background: linear-gradient(to bottom, #000000 0%, transparent 100%);
   z-index: 1;
 }
 .main-header {
@@ -272,25 +272,21 @@ body {
   background-color: #ffffff;
 }
 
-/* ===================================================
-   ESTILIZAÇÃO INTERNA DO MENU OVERLAY
-   =================================================== */
+/* MENU ABERTO - OVERLAY */
 
-/* O container principal do menu aberto */
+/* container principal do menu aberto */
 .menu-overlay {
   position: fixed;
   top: -500px;
-  right: 20px; /* Começa escondido para fora da tela */
+  right: 20px;
 
   width: 220px;
   height: 480px;
-  max-height: calc(
-    100vh - 120px
-  ); /* Garante que não ultrapasse a altura da tela */
+  max-height: calc(100vh - 120px);
 
   border-radius: 2rem;
 
-  background-color: rgba(39, 65, 43, 0.96); /* Fundo escuro chic */
+  background: rgba(30, 61, 35, 0.466); /* Fundo escuro chic */
   backdrop-filter: blur(15px); /* Desfoque de vidro */
   -webkit-backdrop-filter: blur(15px);
   overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse as bordas arredondadas */
@@ -397,4 +393,305 @@ body {
   top: 100px !important; /* Fixa ele exatamente 100px abaixo do topo, logo abaixo do seu header */
   opacity: 1 !important;
   visibility: visible !important;
+}
+
+/* !!!!!!!!!!!!   ABBOUT US SECTION   !!!!!!!!!!! */
+.about-section {
+  padding: 100px 0;
+  background-color: #f7eedf; /* A cor off-white/creme que você usou no fundo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.about-container {
+  max-width: 1200px;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Divide em 2 colunas perfeitas no desktop */
+  gap: 4.5rem;
+  align-items: center;
+}
+
+/* Caixa da Imagem com efeito premium */
+.about-image-box {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(12, 20, 14, 0.08); /* Sombra super sutil */
+}
+
+.about-img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover; /* Garante que a foto não distorça */
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+/* Efeito sutil ao passar o mouse na foto */
+.about-image-box:hover .about-img {
+  transform: scale(1.03);
+}
+
+/* Bloco de Texto */
+.about-subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #bfa17a; /* O dourado/bege da sua marca */
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.about-title {
+  font-family: "Playfair Display", serif; /* Fonte serifada luxuosa do menu */
+  font-size: 2.8rem;
+  color: #263e2c; /* O verde esmeralda escuro */
+  line-height: 1.2;
+  margin-bottom: 1.8rem;
+}
+
+.about-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4a5c4e; /* Um tom sobre tom do verde, mais suave para leitura */
+  margin-bottom: 1.5rem;
+}
+
+/* Grid de Diferenciais */
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  border-top: 1px solid rgba(38, 62, 44, 0.1); /* Linha divisória fina */
+  padding-top: 2rem;
+}
+
+.feature-item h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  color: #263e2c;
+  margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #6a7c6e;
+}
+
+/* RESPONSIVIDADE (MOBILE) */
+@media (max-width: 968px) {
+  .about-container {
+    grid-template-columns: 1fr; /* Vira apenas 1 coluna no celular */
+    gap: 3rem;
+  }
+
+  .about-img {
+    height: 350px; /* Reduz a altura da foto no mobile para não ocupar espaço demais */
+  }
+
+  .about-title {
+    font-size: 2.2rem;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr; /* Diferenciais ficam um sob o outro no celular */
+    gap: 1.5rem;
+  }
+}
+
+/* ===================================================
+   ESTILO DA SEÇÃO DESTINOS
+   =================================================== */
+.destinos-section {
+  padding: 100px 0;
+  background-color: #1e3022; /* O verde bem escuro da marca para dar contraste com o off-white de cima */
+}
+
+.destinos-container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Alinhamento do cabeçalho */
+.destinos-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.destinos-subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #bfa17a; /* Seu dourado */
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.destinos-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  color: #f7eedf; /* Off-white */
+  margin-bottom: 1.2rem;
+}
+
+.destinos-desc {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #a4b4a7; /* Verde acinzentado suave */
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* A Grade (Grid) com 3 colunas no desktop */
+.destinos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+/* O Card Individual */
+.destino-card {
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 450px;
+  cursor: pointer;
+}
+
+/* Caixa da Imagem e Efeito de Sombra/Gradiente */
+.destino-img-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.destino-img-box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Gradiente escuro que sobe da base para dar leitura ao texto */
+  background: linear-gradient(
+    to top,
+    rgba(12, 20, 14, 0.85) 0%,
+    rgba(12, 20, 14, 0.2) 60%
+  );
+  transition: opacity 0.4s ease;
+}
+
+.destino-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Textos sobrepostos na foto */
+.destino-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 2.5rem;
+  z-index: 2;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.destino-info h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: #f7eedf;
+  margin-bottom: 0.4rem;
+  transition: transform 0.4s ease;
+}
+
+.destino-pais {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #bfa17a; /* Dourado */
+  display: block;
+}
+
+/* ===================================================
+   INTERAÇÕES PREMIUM (HOVER)
+   =================================================== */
+.destino-card:hover .destino-img {
+  transform: scale(1.08); /* Efeito sutil de aproximação da foto */
+}
+
+.destino-card:hover .destino-img-box::after {
+  background: linear-gradient(
+    to top,
+    rgba(12, 20, 14, 0.95) 0%,
+    rgba(12, 20, 14, 0.3) 70%
+  );
+}
+
+/* ===================================================
+   RESPONSIVIDADE (MOBILE)
+   =================================================== */
+@media (max-width: 1024px) {
+  .destinos-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+    gap: 1.8rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .destinos-grid {
+    grid-template-columns: 1fr; /* 1 única coluna focada no celular */
+  }
+
+  .destinos-title {
+    font-size: 2.2rem;
+  }
+
+  .destino-card {
+    height: 380px; /* Um pouco menor no celular para rolar melhor */
+  }
+}
+
+/* CURADORIA */
+
+.curadoria-section {
+  padding: 100px 0;
+  background-color: #f7eedf; /* Off-white */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.curadoria-container {
+  max-width: 1200px;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr; /* Começa com uma coluna para mobile */
+  gap: 4.5rem;
+  align-items: center;
+}
+.curadoria-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2.5rem;
+  margin: 1rem;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(12, 20, 14, 0.1);
 }
