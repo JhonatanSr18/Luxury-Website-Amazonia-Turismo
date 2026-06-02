@@ -405,6 +405,39 @@ body {
   height: 100vh;
 }
 
+/* ===================================================
+   EFEITO POST-IT INTERATIVO (ABOUT US)
+   =================================================== */
+
+/* Container Principal do Post-it */
+.postit-wrapper {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Ajuste a altura conforme seu layout */
+  background-color: #0c140e; /* Cor do fundo que aparece atrás enquanto rasga/puxa */
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Espaço das imagens */
+.postit-images {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Comportamento das Imagens */
+.postit-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .about-container {
   max-width: 1200px;
   width: 90%;
@@ -668,30 +701,537 @@ body {
 
 /* CURADORIA */
 
+/* ===================================================
+   ESTILO DA SEÇÃO DE CURADORIA (DESKTOP)
+   =================================================== */
 .curadoria-section {
   padding: 100px 0;
-  background-color: #f7eedf; /* Off-white */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background-color: #f7eedf; /* Off-white elegante para contrastar com o fundo escuro dos destinos */
+  width: 100%;
+  box-sizing: border-box;
 }
+
 .curadoria-container {
   max-width: 1200px;
   width: 90%;
-  display: grid;
-  grid-template-columns: 1fr; /* Começa com uma coluna para mobile */
-  gap: 4.5rem;
-  align-items: center;
+  margin: 0 auto;
 }
+
+/* Cabeçalho */
+.curadoria-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.curadoria-subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #bfa17a; /* Dourado */
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.curadoria-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: #1a2e1f; /* Verde bem escuro */
+  margin-bottom: 1.2rem;
+}
+
+.curadoria-desc {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #556256; /* Verde acinzentado suave */
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grade da Curadoria (Desktop - Empilhado em linha única por item) */
+.curadoria-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Cada item ocupa uma linha inteira */
+  gap: 2.5rem; /* Espaço controlado entre os cards */
+}
+
+/* O Card Individual - Layout Horizontal no Desktop */
 .curadoria-card {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 2.5rem;
-  margin: 1rem;
+  grid-template-columns: 350px 1fr; /* Foto na esquerda fixa, texto ocupa o resto */
+  gap: 3rem;
   align-items: center;
-  text-align: center;
-  padding: 2rem;
+  background-color: rgba(16, 19, 16, 0.096); /* Fundo sutil cinza/esmeralda */
+  padding: 2.5rem;
+  border-radius: 30px;
+
+  /* Proteção Absoluta contra as Marcas Azuis Fantasmas */
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  position: relative;
+}
+
+/* Limpa efeitos decorativos antigos que geravam linhas */
+.curadoria-card::after,
+.curadoria-card::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Caixa da Imagem */
+.curadoria-img-box {
+  width: 100%;
+  height: 220px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(12, 20, 14, 0.1);
+  overflow: hidden;
+}
+
+.curadoria-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Informações do Bloco de Texto */
+.curadoria-info {
+  text-align: left;
+}
+
+.curadoria-info h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: #0c140e;
+  margin-bottom: 1rem;
+}
+
+.curadoria-info p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #334235;
+  line-height: 1.7;
+}
+
+/* ===================================================
+   ESTILO DO FOOTER (DESKTOP)
+   =================================================== */
+.main-footer {
+  background-color: #0c140e; /* O verde-escuro profundo e luxuoso da marca */
+  padding: 80px 0 0 0;
+  color: #f7eedf; /* Texto off-white para contraste perfeito */
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(191, 161, 122, 0.15); /* Linha divisória dourada bem sutil */
+}
+
+.footer-container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr); /* Primeira coluna é mais larga, as outras dividem o espaço */
+  gap: 4rem;
+  padding-bottom: 60px;
+}
+
+.footer-col h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  color: #bfa17a; /* Dourado */
+  margin-bottom: 1.8rem;
+  letter-spacing: 1px;
+}
+
+/* Coluna Institucional (Logo) */
+.footer-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  color: #f7eedf;
+  letter-spacing: 2px;
+  margin-bottom: 1.2rem;
+}
+
+.footer-logo span {
+  font-weight: 300;
+  color: #bfa17a;
+}
+
+.footer-manifesto {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #a3b2a5; /* Texto secundário ligeiramente mais claro para hierarquia visual */
+}
+
+/* Listas de Links e Contatos */
+.footer-links,
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li,
+.footer-contact li {
+  margin-bottom: 1rem;
+}
+
+.footer-links a,
+.footer-contact a,
+.footer-contact span {
+  font-size: 0.9rem;
+  color: #a3b2a5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: #bfa17a; /* Efeito hover dourado */
+}
+
+/* Redes Sociais */
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-social a {
+  font-size: 0.9rem;
+  color: #a3b2a5;
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #bfa17a;
+  transform: translateX(5px); /* Leve efeito de deslocamento lateral no hover */
+}
+
+/* Faixa de Créditos (Bottom) */
+.footer-bottom {
+  border-top: 1px solid rgba(247, 238, 223, 0.05);
+  padding: 30px 0;
+  background-color: #080d09; /* Um tom ligeiramente mais escuro para o fechamento */
+}
+
+.footer-bottom-content {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom-content p {
+  font-size: 0.8rem;
+  color: #617364;
+}
+
+.developer-credit {
+  color: #bfa17a !important;
+  font-weight: 500;
+}
+
+/* ===================================================
+   RESPONSIVIDADE DO FOOTER (MOBILE)
+   =================================================== */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr); /* Transforma em 2x2 para tablets */
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .main-footer {
+    padding-top: 50px;
+  }
+
+  /* 🌟 Transforma o rodapé em uma única coluna vertical perfeitamente empilhada */
+  .footer-container {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem;
+    text-align: center; /* Centraliza as informações no celular */
+  }
+
+  .footer-col h4 {
+    margin-bottom: 1.2rem;
+  }
+
+  .footer-social {
+    flex-direction: row; /* Coloca as redes sociais lado a lado no celular */
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .footer-bottom-content {
+    flex-direction: column; /* Empilha os direitos autorais e créditos */
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+/* ===================================================
+   RESPONSIVIDADE DA CURADORIA (TABLETS E CELULARES)
+   =================================================== */
+@media (max-width: 900px) {
+  .curadoria-card {
+    grid-template-columns: 280px 1fr; /* Encolhe a foto em telas de iPad */
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .curadoria-section {
+    padding: 60px 0 !important;
+  }
+
+  .curadoria-title {
+    font-size: 2.2rem;
+  }
+
+  /* 🌟 Ativa o Grid como Coluna Única Empilhada (Efeito Flex Direction Column) */
+  .curadoria-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* Faz a parte interna do Card quebrar para Vertical */
+  .curadoria-card {
+    grid-template-columns: 1fr !important; /* Foto em cima, texto embaixo */
+    gap: 1.5rem !important;
+    padding: 2rem 1.5rem !important;
+    text-align: center !important; /* Centralização sofisticada para telas pequenas */
+  }
+
+  .curadoria-img-box {
+    height: 240px !important; /* Foto ganha o tamanho ideal de tela mobile */
+    width: 100% !important;
+  }
+
+  .curadoria-info {
+    text-align: center !important;
+  }
+
+  .curadoria-info h3 {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.7rem !important;
+  }
+
+  .curadoria-info p {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+}
+
+/* ===================================================
+   💻 BLINDAGEM PARA TELAS MEDIANAS (Tablets e Notebooks)
+   Entre 769px e 1024px
+   =================================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Destrava a altura de absolutamente todas as seções para o texto não vazar */
+  section,
+  .about-section,
+  .destinos-section,
+  .curadoria-section {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 80px 0 !important; /* Dá um respiro elegante entre os blocos */
+    display: block !important; /* Reseta qualquer flexbox que esteja esmagando o topo */
+  }
+
+  /* Organiza os containers principais para não colidirem */
+  .about-container,
+  .destinos-container {
+    max-width: 90% !important;
+    margin: 0 auto !important;
+  }
+
+  /* Se os títulos ainda estiverem muito gigantes nessa tela, damos uma leve reduzida */
+  .destinos-title,
+  .about-title {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Garante que a grade de destinos mude para 2 colunas para caber em telas médias */
+  .destinos-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 1. RESET DO HEADER E ELEMENTOS DE DESKTOP */
+  .main-header .nav-links,
+  .main-header .btn-orcamento {
+    display: none !important;
+  }
+
+  #menuOverlay.active {
+    margin-top: 0 !important;
+    width: 90% !important;
+  }
+
+  .main-header .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  section {
+    padding: 60px 0 !important;
+    height: auto !important;
+  }
+
+  /* ===================================================
+   CORREÇÃO CIRÚRGICA: ALINHAMENTO DO CARD DE DESTINOS
+   =================================================== */
+  @media (max-width: 768px) {
+    .destinos-grid {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 2.5rem !important;
+      width: 100% !important;
+    }
+
+    /* O Card controla toda a área visível */
+    .destino-card {
+      position: relative !important;
+      display: block !important;
+      width: 100% !important;
+      height: 450px !important; /* Aumentei um pouquinho para dar mais imponência à foto */
+      border-radius: 30px !important;
+      overflow: hidden !important; /* Garante o corte arredondado perfeito */
+    }
+
+    /* A caixa da imagem ocupa 100% do fundo do card */
+    .destino-img-box {
+      width: 100% !important;
+      height: 100% !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      z-index: 1 !important;
+    }
+
+    .destino-img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+    }
+
+    /* 🔥 CORREÇÃO DO GRADIENTE:
+     Colocamos ele diretamente no .destino-card para cobrir a base real do elemento,
+     subindo exatamente de onde o texto está fixado */
+    .destino-card::after {
+      content: "" !important;
+      position: absolute !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 50% !important; /* Cobre metade do card de baixo para cima */
+      /* Gradiente bem denso na base que suaviza até sumir no meio da foto */
+      background: linear-gradient(
+        to top,
+        rgba(12, 20, 14, 0.95) 0%,
+        rgba(12, 20, 14, 0.6) 40%,
+        rgba(12, 20, 14, 0) 100%
+      ) !important;
+      z-index: 2 !important; /* Acima da foto, abaixo do texto */
+      pointer-events: none !important;
+    }
+
+    /* 📍 FIXAÇÃO REAL DO TEXTO NO CANTO INFERIOR ESQUERDO */
+    .destino-info {
+      position: absolute !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      padding: 2rem !important; /* Afastamento luxuoso da borda redonda */
+      z-index: 3 !important; /* Garante que fique por cima de tudo */
+      box-sizing: border-box !important;
+      background: transparent !important; /* Limpa fundos antigos */
+      text-align: left !important;
+    }
+
+    /* Tipografia impecável e legível */
+    .destino-info h3 {
+      font-family: "Playfair Display", serif !important;
+      font-size: 1.8rem !important;
+      color: #f7eedf !important; /* Off-white sempre visível */
+      margin: 0 0 0.2rem 0 !important;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important; /* Sombra extra de segurança nas letras */
+    }
+
+    .destino-pais {
+      font-family: "Montserrat", sans-serif !important;
+      font-size: 0.85rem !important;
+      color: #bfa17a !important; /* Dourado */
+      letter-spacing: 2px !important;
+      text-transform: uppercase !important;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) !important;
+    }
+  }
+
+  /* ===================================================
+   RESPONSIVIDADE DA CURADORIA (TABLETS E CELULARES)
+   =================================================== */
+  @media (max-width: 900px) {
+    .curadoria-card {
+      grid-template-columns: 280px 1fr; /* Encolhe a foto em telas de iPad */
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .curadoria-section {
+      padding: 60px 0 !important;
+    }
+
+    .curadoria-title {
+      font-size: 2.2rem;
+    }
+
+    /* 🌟 Ativa o Grid como Coluna Única Empilhada (Efeito Flex Direction Column) */
+    .curadoria-grid {
+      grid-template-columns: 1fr !important;
+      gap: 2rem !important;
+    }
+
+    /* Faz a parte interna do Card quebrar para Vertical */
+    .curadoria-card {
+      grid-template-columns: 1fr !important; /* Foto em cima, texto embaixo */
+      gap: 1.5rem !important;
+      padding: 2rem 1.5rem !important;
+      text-align: center !important; /* Centralização sofisticada para telas pequenas */
+    }
+
+    .curadoria-img-box {
+      height: 240px !important; /* Foto ganha o tamanho ideal de tela mobile */
+      width: 100% !important;
+    }
+
+    .curadoria-info {
+      text-align: center !important;
+    }
+
+    .curadoria-info h3 {
+      font-size: 1.5rem !important;
+      margin-bottom: 0.7rem !important;
+    }
+
+    .curadoria-info p {
+      font-size: 0.95rem !important;
+      line-height: 1.6 !important;
+    }
+  }
 }

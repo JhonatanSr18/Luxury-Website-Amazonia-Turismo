@@ -56,15 +56,26 @@
                 Coração da Floresta</h2>
             <p>Sua jornada começa aqui...</p>
 
-            <a href="" class="explore-btn">Explorar Roteiros</a>
+            <a href="#catalogo" class="explore-btn">Explorar Roteiros</a>
         </div>
     </section>
     <div class="transition-fade"></div>
     <section class="about-section" id="sobre">
         <div class="about-container">
 
-            <div class="about-image-box">
-                <img src="../img/waterfall.jpg" alt="Experiência de viagem exclusiva Atlas Travel" class="about-img">
+            <div class="postit-wrapper" id="aboutPostIt">
+
+                <div class="postit-images">
+                    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=600" class="postit-img active" alt="Experiência 1">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=600" class="postit-img" alt="Experiência 2">
+                    <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=600" class="postit-img" alt="Experiência 3">
+                    <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=600" class="postit-img" alt="Experiência 4">
+                </div>
+
+                <div class="postit-fold" title="Clique para revelar a próxima experiência">
+                    <span class="fold-back"></span>
+                </div>
+
             </div>
 
             <div class="about-content-box">
@@ -137,13 +148,26 @@
             </div>
         </div>
     </section>
-    <section class="curadoria-section">
+    <!-- ===================================================
+     SEÇÃO: CURADORIA DE EXPERIÊNCIAS (ESTILO DE VIDA)
+     =================================================== -->
+    <section class="curadoria-section" id="curadoria">
         <div class="curadoria-container">
+
+            <!-- Cabeçalho da Seção -->
+            <div class="curadoria-header">
+                <span class="curadoria-subtitle">Estilo de Vida</span>
+                <h2 class="curadoria-title">Experiências Extraordinárias</h2>
+                <p class="curadoria-desc">Momentos desenhados sob medida para quem busca o incomum, a privacidade e o absoluto conforto.</p>
+            </div>
+
+            <!-- Grade de Cards (Grid) -->
             <div class="curadoria-grid">
 
+                <!-- Card 1: Gastronomia -->
                 <div class="curadoria-card">
                     <div class="curadoria-img-box">
-                        <img src="" alt="Curadoria de Viagens Exclusiva">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop" alt="Gastronomia Assinada">
                     </div>
                     <div class="curadoria-info">
                         <h3>Gastronomia Assinada</h3>
@@ -151,9 +175,10 @@
                     </div>
                 </div>
 
+                <!-- Card 2: Hospedagens -->
                 <div class="curadoria-card">
                     <div class="curadoria-img-box">
-                        <img src="" alt="Curadoria de Viagens Exclusiva">
+                        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=600&auto=format&fit=crop" alt="Hospedagens Singulares">
                     </div>
                     <div class="curadoria-info">
                         <h3>Hospedagens Singulares</h3>
@@ -161,9 +186,10 @@
                     </div>
                 </div>
 
+                <!-- Card 3: Logística -->
                 <div class="curadoria-card">
                     <div class="curadoria-img-box">
-                        <img src="" alt="Curadoria de Viagens Exclusiva">
+                        <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?q=80&w=600&auto=format&fit=crop" alt="Jornadas sem Atrito">
                     </div>
                     <div class="curadoria-info">
                         <h3>Jornadas sem Atrito</h3>
@@ -171,9 +197,10 @@
                     </div>
                 </div>
 
+                <!-- Card 4: Arte e História -->
                 <div class="curadoria-card">
                     <div class="curadoria-img-box">
-                        <img src="" alt="Curadoria de Viagens Exclusiva">
+                        <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=800&auto=format&fit=crop" alt="Arte e História Privadas">
                     </div>
                     <div class="curadoria-info">
                         <h3>Arte e História Privadas</h3>
@@ -181,11 +208,54 @@
                     </div>
                 </div>
 
-
-
             </div>
         </div>
     </section>
+    <footer class="main-footer">
+        <div class="footer-container">
+
+            <div class="footer-col footer-about">
+                <h3 class="footer-logo">ATLAS<span>TRAVEL</span></h3>
+                <p class="footer-manifesto">Curadoria exclusiva de jornadas extraordinárias. Desenhamos experiências singulares para quem aprecia o extraordinário.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navegação</h4>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#destinos">Destinos</a></li>
+                    <li><a href="#curadoria">Curadoria</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul class="footer-contact">
+                    <li><a href="mailto:contato@atlastravel.com.br">contato@atlastravel.com.br</a></li>
+                    <li><a href="https://wa.me/5500000000000" target="_blank">+55 (00) 99999-9999</a></li>
+                    <li><span>Belém, Pará - Brasil</span></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Siga a Atlas</h4>
+                <div class="footer-social">
+                    <a href="#" target="_blank" aria-label="Instagram">Instagram</a>
+                    <a href="#" target="_blank" aria-label="Facebook">Facebook</a>
+                    <a href="#" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2026 Atlas Travel. Todos os direitos reservados.</p>
+                <p class="developer-credit">Designed by Atlas</p>
+            </div>
+        </div>
+    </footer>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const navbar = document.getElementById('navbar');
